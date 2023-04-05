@@ -25,7 +25,7 @@ def run_module():
 
     food_price_list = []
 
-    for item in root.iter('item'):
+    for item in root.iter('food'):
         food_name = item.find('name').text
         price = item.find('price').text
         food_price_list.append({"name": food_name, "price": price})
