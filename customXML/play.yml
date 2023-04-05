@@ -1,0 +1,12 @@
+---
+- name: Read food and price from xml file
+  hosts: localhost
+  tasks:
+    - name: run custom module
+      delegate_to: localhost
+      custom:
+        xml_file: /home/ansible/ansible/data.xml
+      register: result
+    - name: print results
+      debug:
+        var: result.food_price_list
