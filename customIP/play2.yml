@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  gather_facts: yes
+  tasks:
+    - name: Validate IP address
+      delegate_to: localhost
+      custom:
+        ip_address: "{{ ansible_default_ipv4['address'] }}"
+      register: result
+    - debug:
+        var: result
